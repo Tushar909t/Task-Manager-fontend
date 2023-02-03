@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&amp;display=swap");
+
+.d-none {
+  display: none;
+}
+
+body {
+  background: #f9f8f8;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+textarea {
+  font-family: "Poppins", sans-serif !important;
+}
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+}
+
+p {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif !important;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif !important;
+}
+a:hover {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.icon-nav {
+  margin: 0 10px;
+}
+.swal2-styled:focus {
+  box-shadow: none !important;
+}
+.main {
+  display: flex;
+}
+.header {
+  width: 100%;
+  height: 40px;
+}
+.header .header-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .nav-logo {
+  width: 30px;
+  height: auto;
+  border-radius: 50%;
+}
+.header-toggle {
+  cursor: pointer;
+}
+.header-toggle,
+span {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0px 8px;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #f9f8f8;
+  padding: 10px 20px;
+}
+@media only screen and (max-width: 992px) {
+  .content {
+    width: 83%;
+  }
+  .content-close {
+    width: 100%;
+    float: none;
+  }
+}
+@media only screen and (max-width: 765px) {
+  .content {
+    width: 78%;
+  }
+  .content-close {
+    width: 100%;
+    float: none;
+  }
+}
+@import "sidebar.css";
+@import "progress.css";
+@import "dropdownmenu.css";
