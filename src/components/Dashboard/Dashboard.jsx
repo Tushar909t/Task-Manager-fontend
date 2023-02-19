@@ -9,7 +9,7 @@ const Dashboard = () => {
   const summaryCount = useSelector((state) => state.summary.value);
   return (
     <Fragment>
-      <div className=" container">
+      <div className="container">
         <div className=" row">
           {summaryCount.map((item, i) => (
             <div

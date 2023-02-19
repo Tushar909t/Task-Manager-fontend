@@ -12,9 +12,15 @@ export function UpdateTodo(id, status) {
       Canceled: "Canceled",
     },
     inputValue: status,
-  }).then((result) => {
-    return UpdateRequest(id, result.value).then((res) => {
-      return res;
+  })
+    .then((result) => {
+      if (result.isConfirmed) {
+        UpdateRequest(id, result.value);
+      } else {
+        console.log("error");
+      }
+    })
+    .catch((err) => {
+      console.log("Error Alert", err);
     });
-  });
 }

@@ -9,10 +9,12 @@ import Canceled from "./pages/CanceledPages";
 import Profile from "./pages/ProfilePages";
 import Login from "./pages/LoginPages";
 import Registration from "./pages/RegistrationPages";
-import ForgtPass from "./pages/ForgetPassPages";
 import Pages404 from "./pages/Pages404";
 import FullScreenLoader from "./components/masterLayout/FullScreenLoader";
 import { getToken } from "./helper/SessionHelper";
+import SendOtpPages from "./pages/AccountRecovery/Sendotp-Pages";
+import VerifyOTPpages from "./pages/AccountRecovery/VerifyOTPpages";
+import CreatePasswordpages from "./pages/AccountRecovery/Create-Password-pages";
 
 const App = () => {
   if (getToken()) {
@@ -41,7 +43,9 @@ const App = () => {
             <Route path="/" element={<Navigate to="/Login" replace />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Registration" element={<Registration />} />
-            <Route path="/Forgtpass" element={<ForgtPass />} />
+            <Route path="/SendOTP" element={<SendOtpPages />} />
+            <Route path="/VerifyOTP" element={<VerifyOTPpages />} />
+            <Route path="/CreatePassword" element={<CreatePasswordpages />} />
             <Route path="*" element={<Pages404 />} />
           </Routes>
         </BrowserRouter>

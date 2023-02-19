@@ -1,14 +1,11 @@
-.logo {
-  cursor: pointer;
-}
-.dropdown {
+.user-dropdown {
   position: relative;
   display: inline-block;
 }
-.dropdown-content {
+.user-dropdown-content {
   display: none;
   position: absolute;
-  background-color: #ffffff;
+  background-color: #3ed5a3;
   width: 260px;
   right: 0;
   transition: 0.3s;
@@ -16,27 +13,10 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
   z-index: 1;
 }
-
-.dropdown-content .logo-profile {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin: auto;
-  display: block;
-}
-.dropdown-content h4 {
-  font-size: 23px;
-  text-align: center;
-}
-.detelis {
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-}
-.profile-icon {
-  margin: 3px 5px;
-}
-.dropdown:hover .dropdown-content {
+.user-dropdown:hover .user-dropdown-content {
   display: block;
   transition: 0.3s;
+}
+.user-dropdown-divider {
+  background: #a2a2a2;
 }

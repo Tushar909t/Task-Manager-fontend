@@ -4,6 +4,7 @@ import { AiFillDelete, AiOutlineCalendar, AiOutlineEdit } from "react-icons/ai";
 import { TasklistByStatus } from "../../APIRequest/ApiRequest";
 import { useSelector } from "react-redux";
 import { DeleteToDo } from "../../helper/DeleteAlert";
+import { UpdateTodo } from "../../helper/UpdateAlert";
 
 const Progress = () => {
   useEffect(() => {
@@ -12,8 +13,22 @@ const Progress = () => {
 
   const ProgressList = useSelector((state) => state.task.progressAll);
   const DeleteItem = (id) => {
-    DeleteToDo(id);
-    TasklistByStatus("New");
+    DeleteToDo(id).then((result) => {
+      if (!result === true) {
+        TasklistByStatus("Progress");
+      } else {
+        console.log("Error Api Call");
+      }
+    });
+  };
+  const UpdateUser = (id, status) => {
+    UpdateTodo(id, status).then((res) => {
+      if (!res === true) {
+        TasklistByStatus("Progress");
+      } else {
+        console.log("error api call");
+      }
+    });
   };
 
   return (
@@ -45,15 +60,21 @@ const Progress = () => {
                 <p className="m-0 animated fadeInUp">
                   <AiOutlineCalendar />
                   {item.createDate}
-                  <a className="icon-nav text-primary mx-1">
+                  <a
+                    href={() => false}
+                    onClick={UpdateUser.bind(this, item._id, item.status)}
+                    className="icon-nav text-primary mx-1">
                     <AiOutlineEdit />
                   </a>
                   <a
+                    href={() => false}
                     onClick={DeleteItem.bind(this, item._id)}
                     className="icon-nav text-danger mx-1">
                     <AiFillDelete />
                   </a>
-                  <a className="badge float-end bg-primary">{item.status}</a>
+                  <a href={() => false} className="badge float-end bg-primary">
+                    {item.status}
+                  </a>
                 </p>
               </div>
             </div>

@@ -20,7 +20,21 @@ class FormHelper {
   SuccessToast(msg) {
     cogoToast.success(msg, { position: "bottom-center" });
   }
+  getBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = () => reject(reader.error);
+    });
+  }
 }
 
-export const { IsEmpty, IsEmail, IsMobile, ErrorToast, SuccessToast } =
-  new FormHelper();
+export const {
+  IsEmpty,
+  IsEmail,
+  IsMobile,
+  ErrorToast,
+  SuccessToast,
+  getBase64,
+} = new FormHelper();

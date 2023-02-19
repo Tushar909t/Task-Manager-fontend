@@ -12,28 +12,23 @@ const New = () => {
   const newAll = useSelector((state) => state.task.newAll);
 
   const DeleteItem = (id) => {
-    DeleteToDo(id)
-      .then((result) => {
-        if (result === true) {
-          TasklistByStatus("New");
-        }
-      })
-      .catch((err) => {
-        console.log("", err);
-      });
+    DeleteToDo(id).then((result) => {
+      if (!result === true) {
+        TasklistByStatus("New");
+      } else {
+        console.log("Error Api Call");
+      }
+    });
   };
 
   const UpdateUser = (id, status) => {
-    UpdateTodo(id, status)
-      .then((result) => {
-        if (result === true) {
-          TasklistByStatus("New");
-          console.log("true");
-        }
-      })
-      .catch((err) => {
-        console.log(err, "Error");
-      });
+    UpdateTodo(id, status).then((res) => {
+      if (!res === true) {
+        TasklistByStatus("New");
+      } else {
+        console.log("error api call");
+      }
+    });
   };
   return (
     <Fragment>
@@ -66,16 +61,20 @@ const New = () => {
                     <AiOutlineCalendar />
                     {item.createDate}
                     <a
+                      href={() => false}
                       onClick={UpdateUser.bind(this, item._id, item.status)}
                       className="icon-nav text-primary mx-1">
                       <AiOutlineEdit />
                     </a>
                     <a
+                      href={() => false}
                       onClick={DeleteItem.bind(this, item._id)}
                       className="icon-nav text-danger mx-1">
                       <AiFillDelete />
                     </a>
-                    <a className="badge float-end bg-info">{item.status}</a>
+                    <a href={() => false} className="badge float-end bg-info">
+                      {item.status}
+                    </a>
                   </p>
                 </div>
               </div>

@@ -25,7 +25,7 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 85vh;
+  /* min-height: 85vh; */
 }
 
 p {
@@ -43,67 +43,15 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
 }
-.icon-nav {
-  margin: 0 10px;
+.icon-view {
+  width: 80px;
+  height: 80px;
 }
+
 .swal2-styled:focus {
   box-shadow: none !important;
 }
-.main {
-  display: flex;
-}
-.header {
-  width: 100%;
-  height: 40px;
-}
-.header .header-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header .nav-logo {
-  width: 30px;
-  height: auto;
-  border-radius: 50%;
-}
-.header-toggle {
-  cursor: pointer;
-}
-.header-toggle,
-span {
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 0px 8px;
-}
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  color: #f9f8f8;
-  padding: 10px 20px;
-}
-@media only screen and (max-width: 992px) {
-  .content {
-    width: 83%;
-  }
-  .content-close {
-    width: 100%;
-    float: none;
-  }
-}
-@media only screen and (max-width: 765px) {
-  .content {
-    width: 78%;
-  }
-  .content-close {
-    width: 100%;
-    float: none;
-  }
-}
+
 @import "sidebar.css";
 @import "progress.css";
 @import "dropdownmenu.css";
