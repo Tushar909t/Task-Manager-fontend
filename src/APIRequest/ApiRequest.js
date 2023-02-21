@@ -91,26 +91,25 @@ export function RegistrationRequest(
     .then((res) => {
       store.dispatch(HideLoader());
       if (res.status === 201) {
-        if (res.data["status"] === "fail") {
-          if (res.data["data"]["keyPattern"]["email"] === 1) {
-            ErrorToast("Email already Exits");
-            return false;
-          } else {
-            ErrorToast("Something Went Wrong!");
+        if (res.data["status"] === ["fail"]) {
+          if (
+            res.data["data"]["keyPattern"]["email"] === "Email Already Exists"
+          ) {
+            ErrorToast("Something Wrong");
             return false;
           }
         } else {
-          SuccessToast("Registration Success!");
+          SuccessToast("Registration Success");
           return true;
         }
       } else {
-        ErrorToast("Something Wrong!");
+        ErrorToast("Something Wrong");
         return false;
       }
     })
     .catch((err) => {
       store.dispatch(HideLoader());
-      ErrorToast("Something Went Wrong");
+      ErrorToast("Email Alreay exists");
       return false;
     });
 }
